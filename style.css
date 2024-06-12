@@ -1,0 +1,98 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	background-color: #333;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.nav-header {
+	display: flex;
+	align-items: center;
+}
+
+.nav-title {
+	color: #fff;
+	font-size: 1.5rem;
+	margin-right: 20px;
+}
+
+.nav-toggle {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	height: 30px;
+	position: relative;
+	width: 30px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+	background-color: #fff;
+	content: '';
+	display: block;
+	height: 3px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+	top: -10px;
+}
+
+.hamburger::after {
+	bottom: -10px;
+}
+
+.nav-menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 60px;
+	left: 0;
+	width: 100%;
+	background-color: #333;
+	transform: translateY(-100%);
+	transition: all 0.3s ease-in-out;
+}
+
+.nav-menu.show {
+	transform: translateY(0%);
+}
+
+.nav-item {
+	list-style-type: none;
+	margin-bottom: 1rem;
+}
+
+.nav-item a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.2rem;
+	padding: 1rem;
+	transition: all 0.3s ease-in-out;
+}
+
+.nav-item a:hover {
+	background-color: #fff;
+	color: #333;
+}

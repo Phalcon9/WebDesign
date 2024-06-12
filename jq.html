@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+    <SCRIPT type="text/javascript" src="./js/jquery-3.6.0.min.js"></SCRIPT>
+    <SCRIPT type="text/javascript">
+        $(document).ready(function () {
+
+            $("button").click(function () {
+                $("#para").prepend(" <B>jQuery </B>");
+                $("#para").append(" <B>append() function</B>.");
+                $("#para").after('<H3> This is the newly inserted heading.</H3>');
+                $('#hide').hide(1000)
+                $('#toggle').toggle()
+                $("#newhead").remove();
+            });
+        });	
+    </SCRIPT>
+    <script>function over(img,imgsrc)
+        {
+        img.src=imgsrc;
+        }
+        function out(img,imgsrc)
+        {
+        img.src=imgsrc;
+        }</script>
+</HEAD>
+
+<BODY>
+    <H3>Complete the sentence:</H3>
+    <p id="toggle">Toggle</p>
+    <p id="hide">Hideme</p>
+    <P ID="para">is a javascript library that enables the
+        content to be appended after the inner content in the
+        selected element using the</P><BR>
+    <H2 ID="newhead">This heading would be removed.</H2>
+    <BUTTON ID="b">Click here</BUTTON>
+
+    <H2> Product Details </H2>
+    <HR>
+    <HR>
+    <H3> Check out the latest products on our website. Exciting Discounts, Hurry !!</H3>
+    <DIV style="position:absolute; top:180px; left:400px;">
+        <P ID="para1"> Move the mouse over the product image </P>
+        <IMG ID="productImage1" src="Product1.png" height="150" 
+            onmouseover="over(this,'Product1Details.jpg')"
+            onmouseout="out (this,'Product1.png')" />
+        <IMG ID="productImage2" src="Product2.png" height="150" 
+        onmouseover="over(this,'Product2Details.jpg')"
+            onmouseout="out (this,'Product2.png')" />
+    </DIV>
+</BODY>
+
+</HTML>

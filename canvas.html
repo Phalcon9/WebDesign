@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" height="500px" width="300px" style="background-color: chocolate;">
+
+    </canvas>
+    <SCRIPT>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.rect(30, 40, 120, 120);
+        ctx.stroke();
+
+        ctx.fillRect(160, 40, 120, 120);
+        ctx.stroke();
+
+        ctx.strokeRect(300, 40, 120, 120);
+
+        ctx.fillRect(460, 40, 120, 120);
+        ctx.clearRect(500, 60, 40, 40);
+
+        ctx.globalAlpha = 0.2;
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 75, 50);
+        ctx.fillStyle = "green";
+        ctx.fillRect(80, 80, 75, 50);
+    </SCRIPT>
+    <SCRIPT type="text/javascript">
+        var canvas;
+        var ctx;
+        var x = 400;
+        var y = 300;
+        var dx = 2;
+        var dy = 4;
+        var WIDTH = 400;
+        var HEIGHT = 300;
+
+        function circle() {
+            ctx.beginPath();
+            ctx.fillStyle = "red";
+            ctx.arc(x, y, 10, 0, Math.PI * 2, true);
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function clear() {
+            ctx.clearRect(0, 0, WIDTH, HEIGHT);
+        }
+
+        function init() {
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+            return setInterval(draw, 10);
+        }
+
+
+        function draw() {
+            clear();
+            circle();
+            if (x > WIDTH || x < 0)
+                dx = -dx;
+            if (y > HEIGHT || y < 0)
+                dy = -dy;
+            x += dx;
+            y += dy;
+        }
+
+        init();
+    </SCRIPT>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<HEAD>
+    <SCRIPT type="text/javascript">
+        function OnClick() {
+            alert("A click event has occurred on the Submit button.");
+        }
+        function AddEventHandler() {
+            var Button = document.getElementById("Button");
+            if (Button.addEventListener) {
+                Button.addEventListener("click", OnClick, false);
+            }
+        }
+        function RemoveEventHandler() {
+            var Button = document.getElementById("Button");
+            if (Button.removeEventListener) {
+                Button.removeEventListener("click", OnClick, false);
+            }
+        }
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    Click on the Submit button when the 'click' event has a listener and when it does not.<BR />
+    <BUTTON onclick="AddEventHandler();">Add a 'click' event listener to the Submit button</BUTTON>
+    <BUTTON onclick="RemoveEventHandler();">Remove the event listener</BUTTON>
+    <BR /><BR />
+    <BUTTON id="Button">Submit</BUTTON>
+</BODY>
+
+</HTML>

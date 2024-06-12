@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            background-color: rgb(23, 23, 75);
+            color: azure;
+            display: grid;
+            place-items: center;
+            row-gap: 4px;
+            padding: 50px;
+        }
+
+        .input1 {
+            display: block;
+            width: 70%;
+            border-radius: 40px;
+            border: none;
+            padding: 10px;
+        }
+
+        select {
+            width: 100px;
+            text-align: center;
+            background-color: rgb(32, 20, 102);
+            border: none;
+            color: beige;
+        }
+
+        input[type="submit"] {
+            color: aliceblue;
+            background-color: rgb(120, 121, 160);
+            border: none;
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        function formValidation(){
+            const firstname = document.getElementById('firstname').value
+            const lastname = document.getElementById('lastname').value
+            const email = document.getElementById('email').value
+            const phone = document.getElementById('phone').value
+
+            if (firstname == "" && lastname =="" && email== "" && phone=="" ) {
+                alert("All fields must be filled")
+                return false
+            }
+            
+            return true
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2>JavaScript HTML Events</h2>
+    <h2 onclick="this.innerHTML='Ooops!' ">Click on this text!</h2>
+    <h2 onmouseleave="changeText(this)">Click on this text!</h2>
+    <p id="myBtn">Try me!!!!!!</p>
+    <script>
+        function changeText(id) {
+            id.innerHTML = "Ooops!";
+        }
+
+        document.getElementById("myBtn").addEventListener("copy", myFunction);
+        function myFunction() {
+            alert('You get mind')
+        }
+    </script>
+
+    <form onsubmit="return formValidation()" novalidate> 
+        <label for="firstname">First Name</label>
+        <input class="input1" id="firstname" type="text" name="firstname" placeholder="FIRST NAME">
+        <label for="lastname">Last Name</label>
+        <input class="input1" id="lastname" type="text" name="lastname" placeholder="LAST NAME">
+        <label for="email">Email</label>
+        <input class="input1" id="email" type="email" placeholder="E-MAIL">
+        <label for="number">Phone Number</label>
+        <input class="input1" id="phone" type="number" placeholder="PHONE NUMBER">
+        <label for="state">Select state</label>
+        <select name="state" id="">
+            <option value="first">Kaduna</option>
+            <option value="first">Abuja</option>
+            <option value="first">Kano</option>
+            <option value="first">Lagos</option>
+            <option value="first">Jos</option>
+            <option value="first">Kogi</option>
+        </select>
+
+
+        <input type="radio" id="male1" name="gender" value="Male">
+        <label for="male1">Male</label>
+        <input type="radio" id="female1" name="gender" value="Female">
+        <label for="female1">Female</label>
+
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        // console.log("wel");
+        // console.log(window.name); // or
+
+        setTimeout(() => {
+            console.log("Delayed for 1 second.");
+        }, "1000");
+        // close()
+
+        document.getElementById("p2").style.color = "blue";
+
+
+        // window.open('index.html')
+    </script>
+
+</body>
+
+</html>
